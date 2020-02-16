@@ -33,9 +33,10 @@ html,body{
 */
 }
 
+h1.bian_name_left:hover, h1.bian_name_right:hover {
+	font-size: 50px;
+}
 
-
-/*后台管理css*/
 .bianfang_image{
     width: 100px;
     height: 100px;
@@ -43,7 +44,7 @@ html,body{
 }
 .bian_name_left{
 	text-align: right;
-	padding: 0;
+	padding-right: 20px;
 	height: 110px;
 	/*line-height: 110px;*/
 	margin: 0;
@@ -52,7 +53,7 @@ html,body{
 }
 .bian_name_right{
 	text-align: left;
-	padding: 0;
+	padding-left: 20px;
 	height: 110px;
 	/*line-height: 110px;*/
 	margin: 0;
@@ -60,21 +61,21 @@ html,body{
 	/*margin-right: 20px;*/
 }
 .bian_name_left strong,.bian_name_right strong{
-	font-size: 50px;
+	font-size: 60px;
 	color:yellow;
 }
 
 .daibiao_left{
 	/*margin-top: 10px;*/
-	margin-right: 170px;
+	margin-right: 165;
 	text-align: right;
-	font-size: 20px;
+	font-size: 30px;
 }
 .daibiao_right{
 	/*margin-top: 10px;*/
-	margin-left: 170px;
+	margin-left: 165;
 	text-align: left;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 .bottom_tools{

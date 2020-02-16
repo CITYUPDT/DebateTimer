@@ -212,7 +212,7 @@ define(function(require,exports,module){
 
 
     $("#timedown3").custimer({  //正二驳论
-        time_length:180,
+        time_length:150,
         begin_btn_id:"beginBtn3",
         stop_btn_id:"stopBtn3",
         reset_btn_id: 'resetBtn3',
@@ -280,7 +280,7 @@ define(function(require,exports,module){
 
 
     $("#timedown4").custimer({  //反二驳论
-        time_length:180,
+        time_length:150,
         begin_btn_id:"beginBtn4",
         stop_btn_id:"stopBtn4",
         reset_btn_id: 'resetBtn4',
@@ -394,7 +394,7 @@ define(function(require,exports,module){
 
 
     $("#timedown5").custimer({  //正三质询
-        time_length:180,
+        time_length:150,
         begin_btn_id:"beginBtn5",
         stop_btn_id:"stopBtn5",
         reset_btn_id: 'resetBtn5',
@@ -403,7 +403,7 @@ define(function(require,exports,module){
     });
 
     $("#timedown5_1").custimer({  //反三质询
-        time_length:180,
+        time_length:150,
         begin_btn_id:"beginBtn5_1",
         stop_btn_id:"stopBtn5_1",
         reset_btn_id: 'resetBtn5_1',
