@@ -2,77 +2,77 @@
 
 
 define(function(require,exports,module){
-     var $ = require('jquery');//引入jquery
-     require('onepage')($);
+    var $ = require('jquery');//引入jquery
+    require('onepage')($);
      // require('boot')($);//共享给jquery
-     require('timer')($);//共享给jquery
-     require('jplay')($);//共享给jquery
-     require('jstorage')($);//共享给jquery
+    require('timer')($);//共享给jquery
+    require('jplay')($);//共享给jquery
+    require('jstorage')($);//共享给jquery
      // require('transit')($);//共享给jquery
      // require('ferroSilder')($);//共享给jquery
      // 
      $("#jquery_jplayer_1").jPlayer({ready: function () {  //30秒铃声
-         $(this).jPlayer("setMedia", {
+        $(this).jPlayer("setMedia", {
             volume: 100,
-          wav:"assets/res/l30s.mp3"
-         });
+        wav:"assets/res/l30s.mp3"
+        });
         },
         swfPath: "assets/res/",
         supplied: "wav,mp3"
-     });
+    });
 
      $("#jquery_jplayer_2").jPlayer({ready: function () {  //时间到铃声
-         $(this).jPlayer("setMedia", {
-          volume :100,
-          wav:"assets/res/l1s.mp3"
-         });
+        $(this).jPlayer("setMedia", {
+        volume :100,
+        wav:"assets/res/l1s.mp3"
+        });
         },
         swfPath: "assets/res/",
         supplied: "wav,mp3"
-     });
+    });
 
-     $("#jquery_jplayer_3").jPlayer({ready: function () {
-         $(this).jPlayer("setMedia", {
+    $("#jquery_jplayer_3").jPlayer({ready: function () {
+        $(this).jPlayer("setMedia", {
             volume: 100,
-          wav:"assets/res/ht.mp3"
-         });
+        wav:"assets/res/ht.mp3"
+        });
         },
         swfPath: "assets/res/",
         supplied: "wav,mp3"
-     });
+    });
 
     $("#play1").click(function(){
         $("#jquery_jplayer_1").jPlayer( "play" );
-     });
-     $("#play2").click(function(){
+    });
+    $("#play2").click(function(){
         $("#jquery_jplayer_2").jPlayer( "play" );
-     });
+    });
 
-     $("#play3").click(function(){
+    $("#play3").click(function(){
         $("#jquery_jplayer_3").jPlayer( "play" );
-     });
-     $("#play4").click(function(){
+    });
+    $("#play4").click(function(){
         $("#jquery_jplayer_3").jPlayer( "play" );
-     });
-     $("#btn1").click(function(){
+    });
+    $("#btn1").click(function(){
         $("#play1").click();
-     });
-     $("#btn2").click(function(){
+    });
+    $("#btn2").click(function(){
         $("#play2").click();
-     });
-     $("#btn3").click(function(){
+    });
+    $("#btn3").click(function(){
         $("#play3").click();
-     });
-     $("#btn4").click(function(){
+    });
+    $("#btn4").click(function(){
         $("#play4").click();
-     });
+    });
 
-     $('.main').onepage_scroll({
+    $('.main').onepage_scroll({
         sectionContainer: ".container-fluid",
         easing: "ease-in",
         loop: false
         // direction: "horizontal"
-     });
+    });
 
 
     //以下是计时时间
