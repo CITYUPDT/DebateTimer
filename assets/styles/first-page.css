@@ -1,0 +1,24 @@
+body {
+  background-color:#263238;
+  align-items: center;
+  text-align: center;
+  color: #F5F5F5;
+
+  position: fixed; 
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.bg-img {
+  background-size:     cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  align-content: center;
+  align-items: center;
+  width: 250px;
+  height: 80px !important;
+  margin: 30px !important;
+}
+
