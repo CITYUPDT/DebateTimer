@@ -75,7 +75,7 @@ define(function(require,exports,module){
     //以下是计时时间
 
     $("#timedown1").custimer({  //正一陈词
-        time_length:210,
+        time_length:240,
         begin_btn_id:"beginBtn1",
         stop_btn_id:"stopBtn1",
         reset_btn_id: 'resetBtn1',
