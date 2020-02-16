@@ -6,6 +6,7 @@ body {
 
   position: fixed; 
   overflow-y: scroll;
+  overflow: hidden;
   width: 100%;
 }
 
