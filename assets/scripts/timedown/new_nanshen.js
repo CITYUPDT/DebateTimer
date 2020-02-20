@@ -477,7 +477,7 @@ define(function(require,exports,module){
     });
 
     $("#timedown7").custimer({  //结辩
-        time_length:240,
+        time_length:210,
         begin_btn_id:"beginBtn7",
         stop_btn_id:"stopBtn7",
         reset_btn_id: 'resetBtn7',
@@ -486,7 +486,7 @@ define(function(require,exports,module){
     });
 
     $("#timedown7_1").custimer({  //结辩
-        time_length:240,
+        time_length:210,
         begin_btn_id:"beginBtn7_1",
         stop_btn_id:"stopBtn7_1",
         reset_btn_id: 'resetBtn7_1',
@@ -554,7 +554,7 @@ define(function(require,exports,module){
         voice_type: 2,
         time_ding_dang: [0]
     });
-     
+
     // ----- 102是奇袭质询的计时 ----- //
     var flag102=2;
     $("#twbeginBtn102").on('click',function()
