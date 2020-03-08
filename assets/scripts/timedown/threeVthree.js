@@ -273,7 +273,7 @@ define(function(require,exports,module){
     });
 
     $("#timedown7_1").custimer({  //正二质反三
-        time_length:240,
+        time_length:180,
         begin_btn_id:"beginBtn7_1",
         stop_btn_id:"stopBtn7_1",
         reset_btn_id: 'resetBtn7_1',
