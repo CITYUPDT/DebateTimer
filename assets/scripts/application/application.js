@@ -2,7 +2,6 @@ define(function(require,exports,module){
      var $ = require('jquery');//引入jquery
      
      var util = require('./util');//引入工具类
-    
      
      // var helloSeaJS = document.getElementById('hello-seajs');
      var helloSeaJS = $('#hello-seajs');
@@ -13,7 +12,7 @@ define(function(require,exports,module){
      window.setInterval(function(){
           helloSeaJS.css({
                color: util.randomColor()
-           });
+          });
      },1500);
 });
 

@@ -7,7 +7,7 @@
 */ 
 ;
 define(function(require,exports,moudles){
-     return function(jquery){
+    return function(jquery){
             /*
              *插件类别：1.类级别的插件开发。2.对象级别插件开发。
              *
@@ -185,6 +185,5 @@ define(function(require,exports,moudles){
             })(jQuery);
 
 
-     }
- 
+    }
 });

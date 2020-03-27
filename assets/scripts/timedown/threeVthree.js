@@ -1,4 +1,4 @@
-// ----- 2018表演赛3v3的计时 ----- //
+// ----- 奥瑞冈3v3的计时 ----- //
 
 
 define(function(require,exports,module){
@@ -299,7 +299,6 @@ define(function(require,exports,module){
         time_ding_dang: [30,0]
     });
     
-
 
 
     var matrix = [
