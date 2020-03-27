@@ -313,8 +313,6 @@ define(function(require,exports,module){
             {full:0},{full:1,moveDirection:'yx'},{full:0}
         ]
     ];
-
-
-        
+    
 });
 

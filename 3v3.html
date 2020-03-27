@@ -11,6 +11,17 @@
 	<link rel="stylesheet" href="assets/styles/index.css">
 	<script src="assets/scripts/seajs/sea.js" id="seajsnode"></script>
 
+  <script>
+    function draw() {
+      let maxNum = 10;
+      for (let i = 0; i <= 20; i++){       
+        setTimeout(function () {   
+          document.getElementById("draw-num").innerHTML = Math.floor(Math.random() * maxNum + 1);
+        }, i * 50)
+      }
+      document.getElementById("draw-num").innerHTML = Math.floor(Math.random() * maxNum + 1);
+    }
+  </script>
 	
 </head>
 <body>
@@ -558,10 +569,10 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 id="timedown7_1"></h1>
-      <button id="beginBtn7_1" class="btn btn-primary btn-xs">开始</button>
-      <button id="stopBtn7_1" class="btn btn-primary btn-xs">停止</button>
-      <button id="resetBtn7_1" class="btn btn-primary btn-xs">重置</button>
-      </div>
+        <button id="beginBtn7_1" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn7_1" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn7_1" class="btn btn-primary btn-xs">重置</button>
+        </div>
     </div>
     
   </div>
@@ -570,7 +581,7 @@
   <!-- 第七回合 总结陈词-->
   <div class="container-fluid" style="position: relative">
     <div class="row text-center margin-top-sm">
-      <h1>结辩</h1>
+      <h1>结辩一</h1>
     </div>
     <div class="row margin-top-md">
       <div class="col-lg-5">
@@ -599,9 +610,19 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 id="timedown8"></h1>
-      <button id="beginBtn8" class="btn btn-primary btn-xs">开始</button>
-      <button id="stopBtn8" class="btn btn-primary btn-xs">停止</button>
-      <button id="resetBtn8" class="btn btn-primary btn-xs">重置</button>
+        <button id="beginBtn8" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn8" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn8" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+
+    <br/><br/><br/>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="draw-num">&nbsp;</h1>
+        <button class="btn btn-primary btn-lg" onclick="draw()">
+          抽签决定<br/>结辩顺序
+        </button>
       </div>
     </div>
     
@@ -609,7 +630,7 @@
 
   <div class="container-fluid" style="position: relative">
     <div class="row text-center margin-top-sm">
-      <h1>结辩</h1>
+      <h1>结辩二</h1>
     </div>
 
     <div class="row margin-top-md">
@@ -640,9 +661,9 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 id="timedown8_1"></h1>
-      <button id="beginBtn8_1" class="btn btn-primary btn-xs">开始</button>
-      <button id="stopBtn8_1" class="btn btn-primary btn-xs">停止</button>
-      <button id="resetBtn8_1" class="btn btn-primary btn-xs">重置</button>
+        <button id="beginBtn8_1" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn8_1" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn8_1" class="btn btn-primary btn-xs">重置</button>
       </div>
     </div>
     
