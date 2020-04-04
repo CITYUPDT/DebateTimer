@@ -13,14 +13,31 @@
 
   <script>
     function draw() {
-      let maxNum = 10;
-      for (let i = 0; i <= 20; i++){       
-        setTimeout(function () {   
-          document.getElementById("draw-num").innerHTML = Math.floor(Math.random() * maxNum + 1);
+      let maxNum = 6;
+      var randNum;
+      for (let i = 0; i <= 30; i++) {       
+        setTimeout(function () {
+          let randNum = Math.floor(Math.random() * maxNum + 1);   
+          document.getElementById("draw-num").innerHTML = randNum;
+          setString(randNum);
         }, i * 50)
-      }
-      document.getElementById("draw-num").innerHTML = Math.floor(Math.random() * maxNum + 1);
+      }      
     }
+
+    function setString(drawNum) {
+      let mod = drawNum % 2;
+
+      if (mod == 1) {
+        document.getElementById("first-jie").innerHTML = "正方结辩"
+        document.getElementById("second-jie").innerHTML = "反方结辩"
+      }
+      else if (mod == 0) {
+        document.getElementById("first-jie").innerHTML = "反方结辩"
+        document.getElementById("second-jie").innerHTML = "正方结辩"
+      }
+
+    }
+
   </script>
 	
 </head>
@@ -581,7 +598,7 @@
   <!-- 第七回合 总结陈词-->
   <div class="container-fluid" style="position: relative">
     <div class="row text-center margin-top-sm">
-      <h1>结辩一</h1>
+      <h1 id="first-jie">结辩一</h1>
     </div>
     <div class="row margin-top-md">
       <div class="col-lg-5">
@@ -630,7 +647,7 @@
 
   <div class="container-fluid" style="position: relative">
     <div class="row text-center margin-top-sm">
-      <h1>结辩二</h1>
+      <h1 id="second-jie">结辩二</h1>
     </div>
 
     <div class="row margin-top-md">
