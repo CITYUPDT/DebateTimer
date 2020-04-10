@@ -298,7 +298,43 @@ define(function(require,exports,module){
         voice_type: 0,
         time_ding_dang: [30,0]
     });
-    
+
+    /** 为4v4而增加的环节 */
+    $("#timedown9_1").custimer({  //反四申论
+        time_length:240,
+        begin_btn_id:"beginBtn9_1",
+        stop_btn_id:"stopBtn9_1",
+        reset_btn_id: 'resetBtn9_1',
+        voice_type: 0,
+        time_ding_dang: [30,0]
+    });
+
+    $("#timedown9_2").custimer({  //正一质反四
+        time_length:180,
+        begin_btn_id:"beginBtn9_2",
+        stop_btn_id:"stopBtn9_2",
+        reset_btn_id: 'resetBtn9_2',
+        voice_type: 0,
+        time_ding_dang: [30,0]
+    });
+
+    $("#timedown9_3").custimer({  //正四申论
+        time_length:240,
+        begin_btn_id:"beginBtn9_3",
+        stop_btn_id:"stopBtn9_3",
+        reset_btn_id: 'resetBtn9_3',
+        voice_type: 0,
+        time_ding_dang: [30,0]
+    });
+
+    $("#timedown9_4").custimer({  //反一质3四
+        time_length:180,
+        begin_btn_id:"beginBtn9_4",
+        stop_btn_id:"stopBtn9_4",
+        reset_btn_id: 'resetBtn9_4',
+        voice_type: 0,
+        time_ding_dang: [30,0]
+    });
 
 
     var matrix = [
