@@ -97,7 +97,7 @@ define(function(require,exports,module){
     {
         flag1 = 0;
     });
-    $("#doubleBtn").on('click',function() {
+    $("#doubleBtn_1").on('click',function() {
         if(flag1 == 1){
             $("#stopBtn1_1").click();
             $("#beginBtn1_2").click();
@@ -109,10 +109,15 @@ define(function(require,exports,module){
         }
     });
 
-    $("#doubleStopBtn").on('click',function(){
+    $("#doubleStopBtn_1").on('click',function(){
         $("#stopBtn1_1").click();
         $("#stopBtn1_2").click();
-        flag=2;
+    });
+
+    $("#doubleResetBtn_1").on('click',function(){
+        $("#resetBtn1_1").click();
+        $("#resetBtn1_2").click();
+        flag1 = 2;
     });
 
     $("#timedown1_1").custimer({
@@ -154,28 +159,35 @@ define(function(require,exports,module){
     });
     $("#beginBtn2_2").on('click',function()
     {
-        flag1 = 0;
+        flag2 = 0;
     });
-    $("#doubleBtn").on('click',function() {
-        if(flag2 == 1){
+    $("#doubleBtn_2").on('click',function() {
+        if(flag2 == 1) {
             $("#stopBtn2_1").click();
             $("#beginBtn2_2").click();
-        }else if(flag2 == 0){
+        }
+        else if(flag2 == 0){
             $("#stopBtn2_2").click();
             $("#beginBtn2_1").click();
-        }else{  // flag2 = 2
-            $("#beginBtn2_2").click();  //这一行决定哪方先开始，在这里Btn2_2反方先开始
+        }
+        else{  // flag2 = 2
+            $("#beginBtn2_1").click();  //这一行决定哪方先开始，在这里Btn2_2反方先开始
         }
     });
 
-    $("#doubleStopBtn").on('click',function(){
+    $("#doubleStopBtn_2").on('click',function(){
         $("#stopBtn2_1").click();
         $("#stopBtn2_2").click();
-        flag=2;
+    });
+
+    $("#doubleResetBtn_2").on('click',function(){
+        $("#resetBtn2_1").click();
+        $("#resetBtn2_2").click();
+        flag2 = 2;
     });
 
     $("#timedown2_1").custimer({
-        time_length:140,
+        time_length:100,
         begin_btn_id:"beginBtn2_1",
         stop_btn_id:"stopBtn2_1",
         reset_btn_id: 'resetBtn2_1',
@@ -184,7 +196,7 @@ define(function(require,exports,module){
     });
 
     $("#timedown2_2").custimer({
-        time_length:100,
+        time_length:140,
         begin_btn_id:"beginBtn2_2",
         stop_btn_id:"stopBtn2_2",
         reset_btn_id: 'resetBtn2_2',
