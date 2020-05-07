@@ -431,7 +431,7 @@ define(function(require,exports,module){
 
 
     //自由辩计时，Btn6_1反方先开始，Btn6正方
-    var flag6=2;
+    var flag6 = 2;
     $("#beginBtn6").on('click',function()
     {
             flag6 =1;
@@ -455,7 +455,12 @@ define(function(require,exports,module){
     $("#doubleStopBtn").on('click',function(){
         $("#stopBtn6").click();
         $("#stopBtn6_1").click();
-        flag6=2;
+    });
+
+    $("#doubleResetBtn").on('click',function(){
+        $("#resetBtn6").click();
+        $("#resetBtn6_1").click();
+        flag6 = 2;
     });
 
     $("#timedown6").custimer({

@@ -432,7 +432,7 @@ define(function(require,exports,module){
     });
     $("#beginBtn6_1").on('click',function()
     {
-        flag6=0;
+        flag6 = 0;
     });
     $("#doubleBtn").on('click',function(){
         if(flag6 == 1){
@@ -449,7 +449,12 @@ define(function(require,exports,module){
     $("#doubleStopBtn").on('click',function(){
         $("#stopBtn6").click();
         $("#stopBtn6_1").click();
-        flag=2;
+    });
+
+    $("#doubleResetBtn").on('click',function(){
+        $("#resetBtn6").click();
+        $("#resetBtn6_1").click();
+        flag6 = 2;
     });
 
     $("#timedown6").custimer({
