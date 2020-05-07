@@ -16,8 +16,9 @@ html,body{
 	height:100%;
 	margin:0;
 	padding:10px;
-	background-image: url(../images/bg-dark.jpg);
-	background-repeat: repeat;
+	background-image: url(../images/bg-stars.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 	color: #fff;
 	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 
