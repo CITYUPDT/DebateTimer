@@ -1,75 +1,75 @@
 define(function(require,exports,module){
-     var $ = require('jquery');//引入jquery
-     require('onepage')($);
+    var $ = require('jquery');//引入jquery
+    require('onepage')($);
      // require('boot')($);//共享给jquery
-     require('timer')($);//共享给jquery
-     require('jplay')($);//共享给jquery
-     require('jstorage')($);//共享给jquery
+    require('timer')($);//共享给jquery
+    require('jplay')($);//共享给jquery
+    require('jstorage')($);//共享给jquery
      // require('transit')($);//共享给jquery
      // require('ferroSilder')($);//共享给jquery
      // 
-     $("#jquery_jplayer_1").jPlayer({ready: function () {  //30秒铃声
-         $(this).jPlayer("setMedia", {
+    $("#jquery_jplayer_1").jPlayer({ready: function () {  //30秒铃声
+        $(this).jPlayer("setMedia", {
             volume: 100,
-          wav:"assets/res/l30s.mp3"
-         });
+        wav:"assets/res/l30s.mp3"
+        });
         },
         swfPath: "assets/res/",
         supplied: "wav,mp3"
-     });
+    });
 
-     $("#jquery_jplayer_2").jPlayer({ready: function () {  //时间到铃声
-         $(this).jPlayer("setMedia", {
-          volume :100,
-          wav:"assets/res/l1s.mp3"
-         });
+    $("#jquery_jplayer_2").jPlayer({ready: function () {  //时间到铃声
+        $(this).jPlayer("setMedia", {
+        volume :100,
+        wav:"assets/res/l1s.mp3"
+        });
         },
         swfPath: "assets/res/",
         supplied: "wav,mp3"
-     });
+    });
 
-     $("#jquery_jplayer_3").jPlayer({ready: function () {
-         $(this).jPlayer("setMedia", {
+    $("#jquery_jplayer_3").jPlayer({ready: function () {
+        $(this).jPlayer("setMedia", {
             volume: 100,
-          wav:"assets/res/ht.mp3"
-         });
+        wav:"assets/res/ht.mp3"
+        });
         },
         swfPath: "assets/res/",
         supplied: "wav,mp3"
-     });
+    });
 
     $("#play1").click(function(){
         $("#jquery_jplayer_1").jPlayer( "play" );
-     });
-     $("#play2").click(function(){
+    });
+    $("#play2").click(function(){
         $("#jquery_jplayer_2").jPlayer( "play" );
-     });
+    });
 
-     $("#play3").click(function(){
+    $("#play3").click(function(){
         $("#jquery_jplayer_3").jPlayer( "play" );
-     });
-     $("#play4").click(function(){
+    });
+    $("#play4").click(function(){
         $("#jquery_jplayer_3").jPlayer( "play" );
-     });
-     $("#btn1").click(function(){
+    });
+    $("#btn1").click(function(){
         $("#play1").click();
-     });
-     $("#btn2").click(function(){
+    });
+    $("#btn2").click(function(){
         $("#play2").click();
-     });
-     $("#btn3").click(function(){
+    });
+    $("#btn3").click(function(){
         $("#play3").click();
-     });
-     $("#btn4").click(function(){
+    });
+    $("#btn4").click(function(){
         $("#play4").click();
-     });
+    });
 
-     $('.main').onepage_scroll({
+    $('.main').onepage_scroll({
         sectionContainer: ".container-fluid",
         easing: "ease-in",
         loop: false
         // direction: "horizontal"
-     });
+    });
 
 
     //以下是计时时间
@@ -387,9 +387,6 @@ define(function(require,exports,module){
         flag5=2;
     });
 
-
-
-
     $("#timedown5").custimer({  //正三质询
         time_length:180,
         begin_btn_id:"beginBtn5",
@@ -431,11 +428,11 @@ define(function(require,exports,module){
     var flag6=2;
     $("#beginBtn6").on('click',function()
     {
-            flag6 =1;
+        flag6 =1;
     });
     $("#beginBtn6_1").on('click',function()
     {
-            flag6=0;
+        flag6=0;
     });
     $("#doubleBtn").on('click',function(){
         if(flag6 == 1){
@@ -525,7 +522,6 @@ define(function(require,exports,module){
         flag4=2;
     });
 
-
     $("#timedown101").custimer({
         time_length:120,
         begin_btn_id:"beginBtn101",
@@ -551,7 +547,6 @@ define(function(require,exports,module){
         voice_type: 2,
         time_ding_dang: [0]
     });
-     
     // ----- 102是奇袭质询的计时 ----- //
     var flag102=2;
     $("#twbeginBtn102").on('click',function()
@@ -647,7 +642,6 @@ define(function(require,exports,module){
         flag31=2;
     });
 
-
     $("#timedown31").custimer({
         time_length:210,
         begin_btn_id:"beginBtn31",
@@ -673,11 +667,11 @@ define(function(require,exports,module){
         voice_type: 2,
         time_ding_dang: [0]
     });
-     
+    
 
 
 
-     var matrix = [
+    var matrix = [
         [
             {full:0},{full:1,moveDirection:'yx'},{full:0}
         ],

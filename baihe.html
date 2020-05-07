@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+  <title>辩论赛计时系统</title>
+  <link rel="shortcut icon" href="./assets/images/pdt.ico">
+  
+	<link rel="stylesheet" href="assets/scripts/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/scripts/jquery_onepage/css/onepage-scroll.css">
+	<!-- <link rel="stylesheet" href="assets/scripts/jquery_ferroSilder/css/jquery.ferro.ferroSlider.css"> -->
+	<link rel="stylesheet" href="assets/styles/index.css">
+	<script src="assets/scripts/seajs/sea.js" id="seajsnode"></script>
+
+  <script>
+    function draw() {
+      let maxNum = 6;
+      var randNum;
+      for (let i = 0; i <= 30; i++) {       
+        setTimeout(function () {
+          let randNum = Math.floor(Math.random() * maxNum + 1);   
+          document.getElementById("draw-num").innerHTML = randNum;
+          setString(randNum);
+        }, i * 50)
+      }      
+    }
+
+    function setString(drawNum) {
+      let mod = drawNum % 2;
+
+      if (mod == 1) {
+        document.getElementById("first-jie").innerHTML = "正方结辩"
+        document.getElementById("second-jie").innerHTML = "反方结辩"
+      }
+      else if (mod == 0) {
+        document.getElementById("first-jie").innerHTML = "反方结辩"
+        document.getElementById("second-jie").innerHTML = "正方结辩"
+      }
+
+    }
+
+  </script>
+	
+</head>
+<body>
+	
+<div class="hideVoice">
+  <div id="jquery_jplayer_1"></div>
+  <button id="play1">play1</button>
+<!--   <div id="jp_container_1">
+  <a href="#" id="voiceplay" class="jp-play">Play</a>
+  <a href="#" class="jp-pause">Pause</a>
+  </div> -->
+</div>
+
+<div class="hideVoice">
+  <div id="jquery_jplayer_2"></div>
+  <button id="play2">play2</button>
+</div>
+
+<div class="hideVoice">
+  <div id="jquery_jplayer_3"></div>
+  <button id="play3">play2</button>
+</div>
+
+<div class="hideVoice">
+  <div id="jquery_jplayer_4"></div>
+  <button id="play4">play2</button>
+</div>
+
+<div class="main">
+  <div class="container-fluid">
+    <div class="row text-center margin-top-sm">
+      <h1>香港城市大学普通话辩论队<br>捭阖赛制</h1>
+    </div>
+    <div class="row margin-top-lg">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>   
+          <!--p class="daibiao_left">(武汉大学)</p-->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>    -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+      
+      <div class="col-lg-12 text-center margin-top-md">
+        <p><button id="btn1" type="button" class="btn btn-primary btn-lg btn-bubbles" style="width:180px;">30秒提示声音</button></p>
+        <p><button id="btn2" type="button" class="btn btn-primary btn-lg btn-bubbles" style="width:180px;">0秒提示声音</button></p>
+        <!-- <p><button id="btn3" type="button" class="btn btn-primary btn-lg" style="width:180px;">提问时间结束声音</button></p> -->
+        <!-- <p><button id="btn4" type="button" class="btn btn-primary btn-lg" style="width:180px;">回答时间结束声音</button></p> -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 正方一辩发言 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+    <h1>正方一辩申论</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>  -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>    -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown1"></h1>
+        <button id="beginBtn1" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn1" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn1" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+  </div>
+  <!-- 正方一辩发言 结束 -->
+
+  <!-- 反方二辩向正方一辩提问 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方二辩向正方一辩提问</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>从未得到</strong>更可悲</h1> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs_white.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>得而复失</strong>更可悲</h1> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 text-center">
+        <h1 id="timedown1_1"></h1>
+        <div style="display: none">
+          <button id="beginBtn1_1">开始</button>
+          <button id="stopBtn1_1">停止</button>
+          <button id="resetBtn1_1">重置</button>
+        </div>
+
+      </div>
+      <div class="col-lg-6 text-center">
+        <h1 id="timedown1_2"></h1>
+        <div style="display:none;">
+          <button id="beginBtn1_2">开始</button>
+          <button id="stopBtn1_2">停止</button>
+          <button id="resetBtn1_2">重置</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="row text-center">
+      <button id="doubleBtn" class="btn btn-primary btn-xs">切换计时</button>
+      <button id="doubleStopBtn" class="btn btn-primary btn-xs">停止计时</button>
+    </div>
+
+  </div>
+  <!-- 反方二辩向正方一辩提问 结束 -->
+
+  <!-- 反方一辩发言 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+    <h1>反方一辩发言</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>  -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>    -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown2"></h1>
+        <button id="beginBtn2" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn2" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn2" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+  </div>
+  <!-- 反方一辩发言 结束 -->
+
+  <!-- 正方二辩向反方一辩提问 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方二辩向反方一辩提问</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>从未得到</strong>更可悲</h1> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs_white.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>得而复失</strong>更可悲</h1> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 text-center">
+        <h1 id="timedown2_1"></h1>
+        <div style="display: none">
+          <button id="beginBtn2_1">开始</button>
+          <button id="stopBtn2_1">停止</button>
+          <button id="resetBtn2_1">重置</button>
+        </div>
+
+      </div>
+      <div class="col-lg-6 text-center">
+        <h1 id="timedown2_2"></h1>
+        <div style="display:none;">
+          <button id="beginBtn2_2">开始</button>
+          <button id="stopBtn2_2">停止</button>
+          <button id="resetBtn2_2">重置</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="row text-center">
+      <button id="doubleBtn" class="btn btn-primary btn-xs">切换计时</button>
+      <button id="doubleStopBtn" class="btn btn-primary btn-xs">停止计时</button>
+    </div>
+
+  </div>
+  <!-- 正方二辩向反方一辩提问 结束 -->
+
+
+  <!-- 反方任意辩手盘问小结 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方任意辩手盘问小结</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>  -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown3_1"></h1>
+        <button id="beginBtn3_1" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn3_1" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn3_1" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+  <!-- 反方任意辩手盘问小结 结束 -->
+
+  <!-- 正方任意辩手盘问小结 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方任意辩手盘问小结</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown3_2"></h1>
+          <button id="beginBtn3_2" class="btn btn-primary btn-xs">开始</button>
+          <button id="stopBtn3_2" class="btn btn-primary btn-xs">停止</button>
+          <button id="resetBtn3_2" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+  <!-- 正方任意辩手盘问小结 结束 -->
+
+
+  <!-- 正方一辩质询反方两位辩手 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方一辩质询反方两位辩手</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>    -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown4_1"></h1>
+      <button id="beginBtn4_1" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn4_1" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn4_1" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+  <!-- 正方一辩质询反方两位辩手 结束 -->
+
+  <!-- 反方一辩质询正方两位辩手 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方三辩质询正方二辩</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>    -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown4_2"></h1>
+      <button id="beginBtn4_2" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn4_2" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn4_2" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+  </div>
+  <!-- 反方一辩质询正方两位辩手 结束 -->
+
+  <!-- 正方二辩总结陈词 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1 id="first-jie">正方二辩总结陈词</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>    -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown5_1"></h1>
+        <button id="beginBtn5_1" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn5_1" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn5_1" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>    
+  </div>
+  <!-- 正方二辩总结陈词 结束 -->
+
+  <!-- 反方二辩总结陈词 -->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1 id="second-jie">反方二辩总结陈词</h1>
+    </div>
+
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <!-- <h1 class="pull-right bian_name_left"><strong>钢铁侠</strong><br>更适合担任复仇者联盟的领袖</h1>   -->
+          </div>   
+          <!-- <p class="daibiao_left">(武汉大学)</p> -->
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <!-- <h1 class="pull-left bian_name_right"><strong>美国队长</strong><br>更适合担任复仇者联盟的领袖</h1>    -->
+          </div>
+          <!-- <p class="daibiao_right">(西安交通大学)</p> -->
+        </div>
+      </div>
+    </div>
+    <!-- 反方二辩总结陈词 结束 -->
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown5_2"></h1>
+        <button id="beginBtn5_2" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn5_2" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn5_2" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+
+<div class="container-fluid" style="position: relative">
+  <div class="row">
+    <p></p>
+  </div>
+  <div class="row margin-top-md">
+    <div class="col-lg-12 text-center">
+      <h1>比赛结束</h1>
+      <h1>评委点评</h1>
+    </div>
+  </div>
+
+  <div id="dot-gp">
+    <div class="loading">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  
+</div>
+
+</div>    
+
+	<script>
+		// seajs配置
+		seajs.config({
+      base: "./assets/scripts/",
+      alias: {
+        "jquery": "jquery/jquery",
+        "onepage": "jquery_onepage/js/jquery.onepage-scroll",
+		    // "boot": "bootstrap/js/bootstrap",
+        "jplay": "jquery_jplay/jquery.jplayer.min",
+        "timer": "jquery_custimer/jquery.custimer",
+        "jstorage": "jquery_jstorage/jstorage.min"
+		    // "transit": "jquery_ferroSilder/jquery.transit.min",
+		    // "ferroSilder": "jquery_ferroSilder/jquery.ferro.ferroSlider-2.3.3.min"
+      }
+		})
+
+		// 加载入口模块
+		seajs.use("application/application");
+		seajs.use("timedown/baihe");  //修改倒计时
+	</script>
+
+	
+</body>
+</html>
+
