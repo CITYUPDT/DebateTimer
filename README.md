@@ -1,6 +1,6 @@
 # DebateTimer
 
-An online debating timer
+> An online debating timer
 
 ## 此计时器可用的赛制包括
 
@@ -10,3 +10,19 @@ An online debating timer
 * [捭阖赛制](https://mp.weixin.qq.com/s/G9ffMgFP8wQf7kncj3pWIA)
 
 计时器网址：<https://bigtoc.github.io/DebateTimer/>
+
+## Webpage Structure
+
+```bash
+index.html
+  ├── NanShen.html
+  │   ├── preliminary-contest.html
+  │   ├── semi-final.html
+  │   └── final.html
+  ├── oregon.html
+  │   ├── 3v3.html
+  │   └── 4v4.html
+  ├── RTHK.html
+  └── baihe.html
+
+```
