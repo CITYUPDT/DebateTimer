@@ -142,7 +142,7 @@ define(function(require,exports,module){
     
 
     $("#timedown2").custimer({  //反一陈词
-        time_length:210,
+        time_length:240,
         begin_btn_id:"beginBtn2",
         stop_btn_id:"stopBtn2",
         reset_btn_id: 'resetBtn2',
@@ -340,7 +340,7 @@ define(function(require,exports,module){
     });
 
     $("#timedown45").custimer({
-        time_length:90,
+        time_length:60,
         begin_btn_id:"beginBtn45",
         stop_btn_id:"stopBtn45",
         reset_btn_id: 'resetBtn45',
@@ -349,7 +349,7 @@ define(function(require,exports,module){
     });
 
     $("#timedown45_1").custimer({
-        time_length:90,
+        time_length:60,
         begin_btn_id:"beginBtn45_1",
         stop_btn_id:"stopBtn45_1",
         reset_btn_id: 'resetBtn45_1',
